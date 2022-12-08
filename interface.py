@@ -20,6 +20,8 @@ def interface_job(input_queue: queue.Queue) -> None:
     input_entry.pack()
     input_button.pack()
 
-    input_button.bind("<Button-1>", lambda event: set_message(event, input_entry, input_queue))
+    input_button.bind(
+        "<Button-1>", lambda event: set_message(event, input_entry, input_queue)
+    )
 
     app.mainloop()

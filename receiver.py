@@ -20,7 +20,7 @@ def receiving_job(
 
     while True:
         received = udp_socket.recv_into(buffer, buffer_size)
-        print(str(buffer[:received], 'utf-8'))
+        print(str(buffer[:received], "utf-8"))
 
 
 if __name__ == "__main__":

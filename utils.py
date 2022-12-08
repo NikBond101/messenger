@@ -6,7 +6,9 @@ import socket
 from typing import Tuple
 
 
-def create_socket(sock_address: Tuple[str, int], logger: logging.Logger) -> socket.socket:
+def create_socket(
+    sock_address: Tuple[str, int], logger: logging.Logger
+) -> socket.socket:
     if os.path.exists(sock_address[0]):
         try:
             logger.info("Unlink socket")
@@ -27,7 +29,7 @@ def create_socket(sock_address: Tuple[str, int], logger: logging.Logger) -> sock
 def create_logger(
     name: str,
     level: str = "DEBUG",
-    format: str = "[%(levelname)s](%(name)s) %(message)s"
+    format: str = "[%(levelname)s](%(name)s) %(message)s",
 ) -> logging.Logger:
     formatter = logging.Formatter(format)
     console = logging.StreamHandler(sys.stdout)
